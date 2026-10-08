@@ -1,0 +1,90 @@
+# Nightly: pull career stats from the SHL APIs, rebuild the signature, publish it.
+#
+# Put this file at .github/workflows/update-signature.yml in your repository.
+# The signature is then served at:
+#   https://<your-username>.github.io/<repository-name>/signature.svg
+
+name: Update signature
+
+on:
+  schedule:
+    # Every night at 07:17 UTC (03:17 US Eastern in summer, 02:17 in winter).
+    # Edit the hour to land after your league's nightly sim. An odd minute is
+    # deliberate: GitHub delays jobs queued at the top of the hour.
+    - cron: "17 7 * * *"
+  workflow_dispatch:   # adds a "Run workflow" button on the Actions tab
+  push:
+    branches: [main]
+    # Redeploy when you change the code, template or this workflow. Not on
+    # data.json, so the nightly commit below never triggers another run.
+    paths:
+      - fetch_career.py
+      - build_career.py
+      - sig.career.template.svg
+      - .github/workflows/update-signature.yml
+
+# One run at a time, so a manual run and the nightly run cannot collide.
+concurrency:
+  group: signature
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write   # to commit the refreshed data.json
+    steps:
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      # Both scripts use only Python's standard library, so there is nothing to
+      # install. If the portal or index is down this step fails, the deploy job
+      # below is skipped, and last night's signature stays up.
+      - name: Fetch career stats
+        run: python fetch_career.py
+
+      - name: Build signature
+        run: python build_career.py
+
+      # Keeps the stats history in the repo, and the crest so it is not
+      # downloaded again. .heartbeat changes once a month: GitHub switches off
+      # scheduled workflows in a public repo after 60 days without activity, and
+      # in the offseason the stats may not change for longer than that.
+      - name: Commit refreshed data
+        run: |
+          date -u +%Y-%m > .heartbeat
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data.json logo.svg .heartbeat
+          if git diff --cached --quiet; then
+            echo "Nothing changed, so no commit."
+          else
+            git commit -m "Update career stats ($(date -u +%F))"
+            git pull --rebase origin "$GITHUB_REF_NAME"
+            git push origin "HEAD:$GITHUB_REF_NAME"
+          fi
+
+      - name: Prepare site
+        run: |
+          mkdir site
+          cp jagger.career.svg site/signature.svg
+
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write      # to deploy to GitHub Pages
+      id-token: write   # to verify the deployment's origin
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
