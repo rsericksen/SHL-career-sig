@@ -1,0 +1,89 @@
+{
+  "attributes": {
+    "acceleration": 14,
+    "aggression": 10,
+    "agility": 14,
+    "balance": 15,
+    "bravery": 10,
+    "checking": 16,
+    "defensiveRead": 14,
+    "determination": 15,
+    "faceoffs": 5,
+    "fighting": 5,
+    "gettingOpen": 15,
+    "hitting": 16,
+    "leadership": 15,
+    "offensiveRead": 15,
+    "passing": 15,
+    "positioning": 16,
+    "professionalism": 15,
+    "puckhandling": 15,
+    "screening": 17,
+    "shootingAccuracy": 13,
+    "shootingRange": 12,
+    "shotBlocking": 5,
+    "speed": 17,
+    "stamina": 15,
+    "stickchecking": 13,
+    "strength": 20,
+    "teamPlayer": 15,
+    "temperament": 15
+  },
+  "player": {
+    "appliedTPE": 1010,
+    "bankedTPE": 32,
+    "birthplace": "New Jersey, USA",
+    "currentLeague": "SHL",
+    "currentTeamID": 12,
+    "draftSeason": 87,
+    "handedness": "Right",
+    "height": "6ft 1in",
+    "jerseyNumber": 89,
+    "name": "Jagger Eriksson",
+    "position": "Right Wing",
+    "totalTPE": 1042,
+    "weight": 185
+  },
+  "stats": {
+    "firstSeason": 90,
+    "league": "SHL",
+    "regular": {
+      "advanced": {
+        "CFPct": 38.6,
+        "FFPct": 37.1,
+        "GA60": 3.8,
+        "GF60": 2.1,
+        "PDO": 99.6,
+        "SA60": 42.0,
+        "SF60": 24.4
+      },
+      "assists": 14,
+      "gamesPlayed": 46,
+      "giveaways": 54,
+      "goals": 4,
+      "hits": 56,
+      "pim": 16,
+      "plusMinus": -19,
+      "points": 18,
+      "ppPoints": 2,
+      "ppTimeOnIce": 544,
+      "shPoints": 0,
+      "shTimeOnIce": 406,
+      "shotsBlocked": 17,
+      "shotsOnGoal": 53,
+      "takeaways": 26,
+      "timeOnIce": 41626
+    },
+    "season": 90,
+    "team": "SFP"
+  },
+  "team": {
+    "abbreviation": "SFP",
+    "colors": {
+      "base": "#360854",
+      "primary": "#d4af37",
+      "secondary": "#360854"
+    },
+    "name": "San Francisco Pride"
+  }
+}
