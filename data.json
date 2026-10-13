@@ -49,30 +49,30 @@
     "league": "SHL",
     "regular": {
       "advanced": {
-        "CFPct": 39.6,
+        "CFPct": 39.5,
         "FFPct": 38.3,
-        "GA60": 3.9,
+        "GA60": 3.8,
         "GF60": 2.0,
         "PDO": 98.7,
-        "SA60": 40.9,
-        "SF60": 24.8
+        "SA60": 41.1,
+        "SF60": 25.0
       },
       "assists": 14,
-      "gamesPlayed": 50,
-      "giveaways": 59,
+      "gamesPlayed": 52,
+      "giveaways": 61,
       "goals": 5,
       "hits": 60,
       "pim": 18,
       "plusMinus": -23,
       "points": 19,
       "ppPoints": 2,
-      "ppTimeOnIce": 697,
+      "ppTimeOnIce": 793,
       "shPoints": 0,
-      "shTimeOnIce": 525,
+      "shTimeOnIce": 601,
       "shotsBlocked": 17,
       "shotsOnGoal": 60,
-      "takeaways": 29,
-      "timeOnIce": 45415
+      "takeaways": 30,
+      "timeOnIce": 47255
     },
     "season": 90,
     "team": "SFP"
