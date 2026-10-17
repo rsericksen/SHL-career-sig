@@ -31,7 +31,7 @@
   },
   "player": {
     "appliedTPE": 1010,
-    "bankedTPE": 45,
+    "bankedTPE": 56,
     "birthplace": "New Jersey, USA",
     "currentLeague": "SHL",
     "currentTeamID": 12,
@@ -41,7 +41,7 @@
     "jerseyNumber": 89,
     "name": "Jagger Eriksson",
     "position": "Right Wing",
-    "totalTPE": 1055,
+    "totalTPE": 1066,
     "weight": 185
   },
   "stats": {
@@ -49,30 +49,30 @@
     "league": "SHL",
     "regular": {
       "advanced": {
-        "CFPct": 38.5,
-        "FFPct": 37.5,
+        "CFPct": 38.0,
+        "FFPct": 37.0,
         "GA60": 3.8,
-        "GF60": 2.1,
-        "PDO": 99.6,
-        "SA60": 40.8,
-        "SF60": 23.9
+        "GF60": 2.0,
+        "PDO": 99.4,
+        "SA60": 40.9,
+        "SF60": 23.6
       },
       "assists": 18,
-      "gamesPlayed": 63,
-      "giveaways": 70,
+      "gamesPlayed": 66,
+      "giveaways": 72,
       "goals": 7,
-      "hits": 82,
-      "pim": 20,
-      "plusMinus": -26,
+      "hits": 86,
+      "pim": 22,
+      "plusMinus": -29,
       "points": 25,
       "ppPoints": 3,
-      "ppTimeOnIce": 989,
+      "ppTimeOnIce": 1290,
       "shPoints": 0,
       "shTimeOnIce": 930,
       "shotsBlocked": 21,
-      "shotsOnGoal": 67,
+      "shotsOnGoal": 69,
       "takeaways": 35,
-      "timeOnIce": 57453
+      "timeOnIce": 60282
     },
     "season": 90,
     "team": "SFP"
