@@ -31,7 +31,7 @@
   },
   "player": {
     "appliedTPE": 1071,
-    "bankedTPE": 11,
+    "bankedTPE": 12,
     "birthplace": "New Jersey, USA",
     "currentLeague": "SHL",
     "currentTeamID": 12,
@@ -41,7 +41,7 @@
     "jerseyNumber": 89,
     "name": "Jagger Eriksson",
     "position": "Right Wing",
-    "totalTPE": 1082,
+    "totalTPE": 1083,
     "weight": 185
   },
   "stats": {
